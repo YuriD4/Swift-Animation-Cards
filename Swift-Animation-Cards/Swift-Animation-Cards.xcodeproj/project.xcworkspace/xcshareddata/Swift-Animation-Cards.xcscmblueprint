@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "C012A7353C0824F1534B67855D525CE0430885C0",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "C012A7353C0824F1534B67855D525CE0430885C0" : 0,
+    "CCF6524F488D4AB6D963431EFF2D19A1C549B0FD" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "7936D1A3-C371-4B85-8344-73F44F3321E7",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "C012A7353C0824F1534B67855D525CE0430885C0" : "Swift-Animation-Cards\/",
+    "CCF6524F488D4AB6D963431EFF2D19A1C549B0FD" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Swift-Animation-Cards",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Swift-Animation-Cards\/Swift-Animation-Cards.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/MrDeveloper4\/Swift-Animation-Cards.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "C012A7353C0824F1534B67855D525CE0430885C0"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/MrDeveloper4\/Swift-Animation-Cards.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "CCF6524F488D4AB6D963431EFF2D19A1C549B0FD"
+    }
+  ]
+}
