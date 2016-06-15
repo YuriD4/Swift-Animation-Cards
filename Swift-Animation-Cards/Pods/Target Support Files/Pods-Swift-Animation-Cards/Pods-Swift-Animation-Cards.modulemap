@@ -1,0 +1,6 @@
+framework module Pods_Swift_Animation_Cards {
+  umbrella header "Pods-Swift-Animation-Cards-umbrella.h"
+
+  export *
+  module * { export * }
+}

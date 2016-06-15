@@ -22,10 +22,10 @@
         </mutableArray>
     </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--HomeVC-->
         <scene sceneID="jrJ-W4-5QS">
             <objects>
-                <viewController id="QJA-la-0z0" customClass="ViewController" customModule="Swift_Animation_Cards" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="QJA-la-0z0" customClass="HomeVC" customModule="Swift_Animation_Cards" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TTS-Bg-tQ9">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -47,7 +47,8 @@
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" image="image"/>
                                                 <connections>
-                                                    <segue destination="IcE-xw-Saq" kind="modal" id="pVh-x5-yAa"/>
+                                                    <action selector="imageButtonDidPress:" destination="QJA-la-0z0" eventType="touchUpInside" id="arm-LB-sf8"/>
+                                                    <segue destination="IcE-xw-Saq" kind="modal" id="AgG-2e-MKS"/>
                                                 </connections>
                                             </button>
                                             <view contentMode="scaleToFill" id="BaJ-lp-A9E">
@@ -92,6 +93,9 @@
                                                 <state key="normal" title="Like" image="like">
                                                     <color key="titleColor" red="0.2784313725" green="0.2666666667" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="likeButtonDidPress:" destination="QJA-la-0z0" eventType="touchUpInside" id="BwK-zi-o73"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="nSB-SH-XPQ">
                                                 <rect key="frame" x="140" y="210" width="140" height="60"/>
@@ -101,6 +105,9 @@
                                                 <state key="normal" title="Share" image="share">
                                                     <color key="titleColor" red="0.2784313725" green="0.2666666667" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="shareButtonDidPress:" destination="QJA-la-0z0" eventType="touchUpInside" id="qfJ-52-vbk"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" red="0.90588235289999997" green="0.94117647059999998" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -114,8 +121,11 @@
                                         <rect key="frame" x="260" y="24" width="40" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="button-user"/>
+                                        <connections>
+                                            <action selector="userButtonDidPress:" destination="QJA-la-0z0" eventType="touchUpInside" id="5sS-Wr-6e3"/>
+                                        </connections>
                                     </button>
-                                    <view contentMode="scaleToFill" id="Jm3-iJ-NSJ">
+                                    <view hidden="YES" contentMode="scaleToFill" id="Jm3-iJ-NSJ">
                                         <rect key="frame" x="0.0" y="368" width="320" height="200"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
@@ -169,7 +179,7 @@
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
-                                    <view contentMode="scaleToFill" id="tXt-Mh-2EE">
+                                    <view hidden="YES" contentMode="scaleToFill" id="tXt-Mh-2EE">
                                         <rect key="frame" x="130" y="72" width="170" height="141"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
@@ -210,6 +220,22 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="authorLabel" destination="ehn-cq-EF6" id="iwF-jl-wh5"/>
+                        <outlet property="avatarImageView" destination="EOe-xc-KOh" id="ukj-I3-6gx"/>
+                        <outlet property="backgroundImageView" destination="IaU-nE-Qzo" id="q72-qd-axh"/>
+                        <outlet property="backgroundMaskView" destination="bLG-sS-N6A" id="g6s-Sy-BDQ"/>
+                        <outlet property="dialogView" destination="Akx-ha-NHB" id="kSe-tC-OaM"/>
+                        <outlet property="favouritesLabel" destination="Htv-lU-q2x" id="E5i-H7-tNs"/>
+                        <outlet property="headerView" destination="BaJ-lp-A9E" id="t8t-Ih-zYt"/>
+                        <outlet property="imageButton" destination="MDD-3Z-FyW" id="Y2w-JM-OQI"/>
+                        <outlet property="likeButton" destination="sq3-8A-emx" id="wPt-BV-aE4"/>
+                        <outlet property="popoverView" destination="tXt-Mh-2EE" id="WFH-om-F62"/>
+                        <outlet property="shareButton" destination="nSB-SH-XPQ" id="wVJ-dJ-O4H"/>
+                        <outlet property="shareView" destination="Jm3-iJ-NSJ" id="qUK-0V-qTN"/>
+                        <outlet property="titleLabel" destination="2E9-F4-4ia" id="vJf-T8-6m0"/>
+                        <outlet property="userButton" destination="Jes-4y-cVr" id="tX0-lX-wsf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ufx-Yo-Uh1" sceneMemberID="firstResponder"/>
             </objects>
