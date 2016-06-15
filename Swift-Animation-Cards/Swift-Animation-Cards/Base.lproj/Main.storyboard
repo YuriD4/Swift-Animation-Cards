@@ -64,11 +64,6 @@
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar" id="EOe-xc-KOh">
                                                         <rect key="frame" x="68" y="34" width="15" height="15"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                                <integer key="value" value="7"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                        </userDefinedRuntimeAttributes>
                                                     </imageView>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dialog-favorites" id="Htv-lU-q2x">
                                                         <rect key="frame" x="232" y="8" width="40" height="40"/>
@@ -124,6 +119,14 @@
                                             <action selector="userButtonDidPress:" destination="QJA-la-0z0" eventType="touchUpInside" id="5sS-Wr-6e3"/>
                                         </connections>
                                     </button>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="hlw-dK-8vI">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="maskButtonDidPress:" destination="QJA-la-0z0" eventType="touchUpInside" id="a6f-m4-zeh"/>
+                                        </connections>
+                                    </button>
                                     <view hidden="YES" contentMode="scaleToFill" id="Jm3-iJ-NSJ">
                                         <rect key="frame" x="0.0" y="368" width="320" height="200"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -147,34 +150,41 @@
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" backgroundImage="share-twitter"/>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Share" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="uVw-pj-vt6">
-                                                <rect key="frame" x="125" y="26" width="71" height="23"/>
+                                            <view contentMode="scaleToFill" id="BxV-Ub-FW0">
+                                                <rect key="frame" x="15" y="6" width="303" height="201"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" name="Libertad" family="Libertad" pointSize="22"/>
-                                                <color key="textColor" red="0.63851232670000002" green="0.65508422079999995" blue="0.7239819005" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Facebook" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="laG-zo-D0N">
-                                                <rect key="frame" x="216" y="167" width="82" height="20"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" name="Libertad" family="Libertad" pointSize="18"/>
-                                                <color key="textColor" red="0.63851232670000002" green="0.65508422079999995" blue="0.7239819005" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Twitter" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Gfi-LC-Ml0">
-                                                <rect key="frame" x="122" y="167" width="73" height="20"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" name="Libertad" family="Libertad" pointSize="18"/>
-                                                <color key="textColor" red="0.63851232670000002" green="0.65508422079999995" blue="0.7239819005" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="V8n-NS-Ecv">
-                                                <rect key="frame" x="35" y="167" width="53" height="20"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" name="Libertad" family="Libertad" pointSize="18"/>
-                                                <color key="textColor" red="0.63851232670000002" green="0.65508422079999995" blue="0.7239819005" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Share" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="uVw-pj-vt6">
+                                                        <rect key="frame" x="110" y="20" width="71" height="23"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" name="Libertad" family="Libertad" pointSize="22"/>
+                                                        <color key="textColor" red="0.63851232670000002" green="0.65508422079999995" blue="0.7239819005" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Facebook" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="laG-zo-D0N">
+                                                        <rect key="frame" x="201" y="161" width="82" height="20"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" name="Libertad" family="Libertad" pointSize="18"/>
+                                                        <color key="textColor" red="0.63851232670000002" green="0.65508422079999995" blue="0.7239819005" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Twitter" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Gfi-LC-Ml0">
+                                                        <rect key="frame" x="107" y="161" width="73" height="20"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" name="Libertad" family="Libertad" pointSize="18"/>
+                                                        <color key="textColor" red="0.63851232670000002" green="0.65508422079999995" blue="0.7239819005" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="V8n-NS-Ecv">
+                                                        <rect key="frame" x="20" y="161" width="53" height="20"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" name="Libertad" family="Libertad" pointSize="18"/>
+                                                        <color key="textColor" red="0.63851232670000002" green="0.65508422079999995" blue="0.7239819005" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
@@ -225,14 +235,19 @@
                         <outlet property="backgroundImageView" destination="IaU-nE-Qzo" id="q72-qd-axh"/>
                         <outlet property="backgroundMaskView" destination="bLG-sS-N6A" id="g6s-Sy-BDQ"/>
                         <outlet property="dialogView" destination="Akx-ha-NHB" id="kSe-tC-OaM"/>
+                        <outlet property="emailButton" destination="0MC-2m-mey" id="lU0-PW-QdM"/>
+                        <outlet property="facebookButton" destination="nRU-Oy-SSN" id="VlF-5R-3mQ"/>
                         <outlet property="favouritesLabel" destination="Htv-lU-q2x" id="E5i-H7-tNs"/>
                         <outlet property="headerView" destination="BaJ-lp-A9E" id="t8t-Ih-zYt"/>
                         <outlet property="imageButton" destination="MDD-3Z-FyW" id="Y2w-JM-OQI"/>
                         <outlet property="likeButton" destination="sq3-8A-emx" id="wPt-BV-aE4"/>
+                        <outlet property="maskButton" destination="hlw-dK-8vI" id="B6m-yo-AMV"/>
                         <outlet property="popoverView" destination="tXt-Mh-2EE" id="WFH-om-F62"/>
                         <outlet property="shareButton" destination="nSB-SH-XPQ" id="wVJ-dJ-O4H"/>
+                        <outlet property="shareLabelsView" destination="BxV-Ub-FW0" id="QnR-xH-OMe"/>
                         <outlet property="shareView" destination="Jm3-iJ-NSJ" id="qUK-0V-qTN"/>
                         <outlet property="titleLabel" destination="2E9-F4-4ia" id="vJf-T8-6m0"/>
+                        <outlet property="twitterButton" destination="k1y-4n-Qew" id="FgF-lr-TEC"/>
                         <outlet property="userButton" destination="Jes-4y-cVr" id="tX0-lX-wsf"/>
                         <segue destination="IcE-xw-Saq" kind="modal" identifier="homeToDetail" animates="NO" id="znZ-Hy-1TJ"/>
                     </connections>
