@@ -63,13 +63,13 @@
 		483D29261D10B26100F6B4FE /* Swift-Animation-Cards */ = {
 			isa = PBXGroup;
 			children = (
+				483D29301D10B26100F6B4FE /* LaunchScreen.storyboard */,
 				483D29271D10B26100F6B4FE /* AppDelegate.swift */,
 				483D292B1D10B26100F6B4FE /* Main.storyboard */,
 				4837C1A41D11EB1100AC2396 /* HomeVC.swift */,
 				4837C1A81D12086500AC2396 /* DetailVC.swift */,
-				483D292E1D10B26100F6B4FE /* Assets.xcassets */,
-				483D29301D10B26100F6B4FE /* LaunchScreen.storyboard */,
 				483D29331D10B26100F6B4FE /* Info.plist */,
+				483D292E1D10B26100F6B4FE /* Assets.xcassets */,
 			);
 			path = "Swift-Animation-Cards";
 			sourceTree = "<group>";

@@ -159,5 +159,99 @@ class HomeVC: UIViewController {
             self.dialogView.transform = CGAffineTransformConcat(scale, translate)
         }, completion: nil)
         
+        animator = UIDynamicAnimator(referenceView: view)
+        
     }
+    
+    
+    var animator : UIDynamicAnimator!
+    var attachmentBehavior : UIAttachmentBehavior!
+    var gravityBehavior : UIGravityBehavior!
+    var snapBehavior : UISnapBehavior!
+    
+    @IBOutlet var panRecognizer: UIPanGestureRecognizer!
+    @IBAction func handleGesture(sender: UIPanGestureRecognizer) {
+        let location = sender.locationInView(view)
+        let boxLocation = sender.locationInView(dialogView)
+        
+        switch sender.state {
+        case .Began:
+            if animator.behaviors.count != 0 {
+                animator.removeBehavior(snapBehavior)
+            }
+            
+            let centerOffset = UIOffsetMake(boxLocation.x - CGRectGetMidX(dialogView.bounds), boxLocation.y - CGRectGetMidY(dialogView.bounds))
+            attachmentBehavior = UIAttachmentBehavior(item: dialogView, offsetFromCenter: centerOffset, attachedToAnchor: location)
+            attachmentBehavior.frequency = 0
+            
+            animator.addBehavior(attachmentBehavior)
+        case .Changed:
+            attachmentBehavior.anchorPoint = location
+        case .Ended:
+            animator.removeBehavior(attachmentBehavior)
+            
+            snapBehavior = UISnapBehavior(item: dialogView, snapToPoint: view.center)
+            animator.addBehavior(snapBehavior)
+            
+            let translation = sender.translationInView(view)
+            if translation.y > 100 {
+                UIView.animateWithDuration(0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: [], animations: {
+                    self.animator.removeAllBehaviors()
+                    
+                    self.gravityBehavior = UIGravityBehavior(items: [self.dialogView])
+                    self.gravityBehavior.gravityDirection = CGVectorMake(0, 10)
+                    self.animator.addBehavior(self.gravityBehavior)
+                }, completion: nil)
+            }
+        default:
+            break
+        }
+        
+    }
+    
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
