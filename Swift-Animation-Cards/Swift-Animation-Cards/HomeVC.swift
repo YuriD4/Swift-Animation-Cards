@@ -143,14 +143,10 @@ class HomeVC: UIViewController {
         return UIStatusBarStyle.LightContent
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        insertBlurView(backgroundMaskView, style: UIBlurEffectStyle.Dark)
-        insertBlurView(headerView, style: UIBlurEffectStyle.Dark)
-        
+    func setDialogViewStartView(){
         let scale = CGAffineTransformMakeScale(0.5, 0.5)
         let translate = CGAffineTransformMakeTranslation(0, -200)
+        dialogView.center = view.center
         dialogView.transform = CGAffineTransformConcat(scale, translate)
         
         UIView.animateWithDuration(0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: [], animations: {
@@ -158,6 +154,15 @@ class HomeVC: UIViewController {
             let translate = CGAffineTransformMakeTranslation(0, 0)
             self.dialogView.transform = CGAffineTransformConcat(scale, translate)
         }, completion: nil)
+
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        insertBlurView(backgroundMaskView, style: UIBlurEffectStyle.Dark)
+        insertBlurView(headerView, style: UIBlurEffectStyle.Dark)
+        setDialogViewStartView()
         
         animator = UIDynamicAnimator(referenceView: view)
         
@@ -176,9 +181,7 @@ class HomeVC: UIViewController {
         
         switch sender.state {
         case .Began:
-            if animator.behaviors.count != 0 {
-                animator.removeBehavior(snapBehavior)
-            }
+            self.animator.removeAllBehaviors()
             
             let centerOffset = UIOffsetMake(boxLocation.x - CGRectGetMidX(dialogView.bounds), boxLocation.y - CGRectGetMidY(dialogView.bounds))
             attachmentBehavior = UIAttachmentBehavior(item: dialogView, offsetFromCenter: centerOffset, attachedToAnchor: location)
@@ -201,7 +204,11 @@ class HomeVC: UIViewController {
                     self.gravityBehavior = UIGravityBehavior(items: [self.dialogView])
                     self.gravityBehavior.gravityDirection = CGVectorMake(0, 10)
                     self.animator.addBehavior(self.gravityBehavior)
-                }, completion: nil)
+                    }, completion: { finished in
+                        self.animator.removeAllBehaviors()
+                        
+                        self.setDialogViewStartView()
+                })
             }
         default:
             break
