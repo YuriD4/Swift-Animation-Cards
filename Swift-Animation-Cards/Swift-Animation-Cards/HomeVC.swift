@@ -195,21 +195,6 @@ class HomeVC: UIViewController {
             
             snapBehavior = UISnapBehavior(item: dialogView, snapToPoint: view.center)
             animator.addBehavior(snapBehavior)
-            
-            let translation = sender.translationInView(view)
-            if translation.y > 100 {
-                UIView.animateWithDuration(0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: [], animations: {
-                    self.animator.removeAllBehaviors()
-                    
-                    self.gravityBehavior = UIGravityBehavior(items: [self.dialogView])
-                    self.gravityBehavior.gravityDirection = CGVectorMake(0, 10)
-                    self.animator.addBehavior(self.gravityBehavior)
-                    }, completion: { finished in
-                        self.animator.removeAllBehaviors()
-                        
-                        self.setDialogViewStartView()
-                })
-            }
         default:
             break
         }
