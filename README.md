@@ -7,6 +7,8 @@ Simple mobile application using Swift2:
 - Spring Animations
 - Gestures + UIKit Dynamics
 
+*Wait for gif presentation, it's loading...*
+
 ![Demo](ScreenFlow.gif)
 
 
