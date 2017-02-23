@@ -2,21 +2,21 @@ PODS:
   - Spring (1.0.3)
 
 DEPENDENCIES:
-  - Spring (from `https://github.com/MengTo/Spring.git`, branch `swift2`)
+  - Spring (from `https://github.com/MengTo/Spring.git`, branch `swift3`)
 
 EXTERNAL SOURCES:
   Spring:
-    :branch: swift2
+    :branch: swift3
     :git: https://github.com/MengTo/Spring.git
 
 CHECKOUT OPTIONS:
   Spring:
-    :commit: 18d5c7b74489de8044e34767f856d1e574f0820e
+    :commit: 3a9227c6e9157e7b47f5ac1ee5abab2a56b50002
     :git: https://github.com/MengTo/Spring.git
 
 SPEC CHECKSUMS:
   Spring: 3f02b5dc3308572ef177b3cad0fa7bbc4b0706f7
 
-PODFILE CHECKSUM: d5e0cf2bbd331499ed72aa939454e95e1d310e1c
+PODFILE CHECKSUM: 75e511c6becbe349c5d78ed7014c015a55d2887a
 
-COCOAPODS: 1.0.1
+COCOAPODS: 1.2.0

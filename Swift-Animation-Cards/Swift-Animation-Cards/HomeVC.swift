@@ -32,12 +32,12 @@ class HomeVC: UIViewController {
     @IBOutlet weak var shareLabelsView: UIView!
 
     struct Constants {
-        static let screenWidth = UIScreen.mainScreen().bounds.width
-        static let screenHeight = UIScreen.mainScreen().bounds.height
+        static let screenWidth = UIScreen.main.bounds.width
+        static let screenHeight = UIScreen.main.bounds.height
     }
     
-    @IBAction func maskButtonDidPress(sender: UIButton) {
-        UIView.animateWithDuration(0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: [], animations: {
+    @IBAction func maskButtonDidPress(_ sender: UIButton) {
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: [], animations: {
             self.maskButton.alpha = 0
         }, completion: nil)
         hideShareView()
@@ -45,114 +45,114 @@ class HomeVC: UIViewController {
     }
     
     func showMask() {
-        maskButton.hidden = false
+        maskButton.isHidden = false
         maskButton.alpha = 0
-        UIView.animateWithDuration(0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: [], animations: {
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: [], animations: {
             self.maskButton.alpha = 1
         }, completion: nil)
     }
 
-    @IBAction func likeButtonDidPress(sender: UIButton) {
+    @IBAction func likeButtonDidPress(_ sender: UIButton) {
     }
 
-    @IBAction func shareButtonDidPress(sender: UIButton) {
-        shareView.hidden = false
+    @IBAction func shareButtonDidPress(_ sender: UIButton) {
+        shareView.isHidden = false
         showMask()
-        shareView.transform = CGAffineTransformMakeTranslation(0, 200)
-        emailButton.transform = CGAffineTransformMakeTranslation(0, 200)
-        twitterButton.transform = CGAffineTransformMakeTranslation(0, 200)
-        facebookButton.transform = CGAffineTransformMakeTranslation(0, 200)
+        shareView.transform = CGAffineTransform(translationX: 0, y: 200)
+        emailButton.transform = CGAffineTransform(translationX: 0, y: 200)
+        twitterButton.transform = CGAffineTransform(translationX: 0, y: 200)
+        facebookButton.transform = CGAffineTransform(translationX: 0, y: 200)
         shareLabelsView.alpha = 0
         shareView.alpha = 1
         maskButton.alpha = 1
         
-        UIView.animateWithDuration(0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: [], animations: {
-            self.shareView.transform = CGAffineTransformMakeTranslation(0, 0)
-            self.dialogView.transform = CGAffineTransformMakeScale(0.8, 0.8)
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: [], animations: {
+            self.shareView.transform = CGAffineTransform(translationX: 0, y: 0)
+            self.dialogView.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
         }, completion: nil)
         
-        UIView.animateWithDuration(0.5, delay: 0.05, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: [], animations: {
-            self.emailButton.transform = CGAffineTransformMakeTranslation(0, 0)
+        UIView.animate(withDuration: 0.5, delay: 0.05, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: [], animations: {
+            self.emailButton.transform = CGAffineTransform(translationX: 0, y: 0)
         }, completion: nil)
         
-        UIView.animateWithDuration(0.5, delay: 0.1, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: [], animations: {
-            self.twitterButton.transform = CGAffineTransformMakeTranslation(0, 0)
+        UIView.animate(withDuration: 0.5, delay: 0.1, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: [], animations: {
+            self.twitterButton.transform = CGAffineTransform(translationX: 0, y: 0)
         }, completion: nil)
         
-        UIView.animateWithDuration(0.5, delay: 0.15, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: [], animations: {
-            self.facebookButton.transform = CGAffineTransformMakeTranslation(0, 0)
+        UIView.animate(withDuration: 0.5, delay: 0.15, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: [], animations: {
+            self.facebookButton.transform = CGAffineTransform(translationX: 0, y: 0)
         }, completion: nil)
         
-        UIView.animateWithDuration(0.5, delay: 0.2, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: [], animations: {
+        UIView.animate(withDuration: 0.5, delay: 0.2, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: [], animations: {
             self.shareLabelsView.alpha = 1
         }, completion: nil)
     }
     
     func hideShareView() {
-        UIView.animateWithDuration(0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: [], animations: {
-            self.shareView.transform = CGAffineTransformMakeTranslation(0, 200)
-            self.dialogView.transform = CGAffineTransformMakeScale(1, 1)
-            self.maskButton.hidden = true
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: [], animations: {
+            self.shareView.transform = CGAffineTransform(translationX: 0, y: 200)
+            self.dialogView.transform = CGAffineTransform(scaleX: 1, y: 1)
+            self.maskButton.isHidden = true
             self.shareView.alpha = 0
         }, completion: nil)
     }
 
-    @IBAction func userButtonDidPress(sender: UIButton) {
-        popoverView.hidden = false
+    @IBAction func userButtonDidPress(_ sender: UIButton) {
+        popoverView.isHidden = false
         
-        let scale = CGAffineTransformMakeScale(0.3, 0.3)
-        let translate = CGAffineTransformMakeTranslation(50, -50)
-        popoverView.transform = CGAffineTransformConcat(scale, translate)
+        let scale = CGAffineTransform(scaleX: 0.3, y: 0.3)
+        let translate = CGAffineTransform(translationX: 50, y: -50)
+        popoverView.transform = scale.concatenating(translate)
         popoverView.alpha = 0
         
         showMask()
         
-        UIView.animateWithDuration(0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: [], animations: {
-            let scale = CGAffineTransformMakeScale(1, 1)
-            let translate = CGAffineTransformMakeTranslation(0, 0)
-            self.popoverView.transform = CGAffineTransformConcat(scale, translate)
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: [], animations: {
+            let scale = CGAffineTransform(scaleX: 1, y: 1)
+            let translate = CGAffineTransform(translationX: 0, y: 0)
+            self.popoverView.transform = scale.concatenating(translate)
             self.popoverView.alpha = 1
         }, completion: nil)
 
     }
     
     func hidePopover() {
-        UIView.animateWithDuration(0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: [], animations: {
-            self.popoverView.hidden = true
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: [], animations: {
+            self.popoverView.isHidden = true
         }, completion: nil)
     }
     
-    @IBAction func imageButtonDidPress(sender: UIButton) {
+    @IBAction func imageButtonDidPress(_ sender: UIButton) {
 
-        UIView.animateWithDuration(0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: [], animations: {
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: [], animations: {
             self.dialogView.layer.cornerRadius = 0
-            self.dialogView.frame = CGRectMake(0, 0, Constants.screenWidth, Constants.screenHeight)
+            self.dialogView.frame = CGRect(x: 0, y: 0, width: Constants.screenWidth, height: Constants.screenHeight)
             let scale = self.imageButton.frame.height / self.imageButton.frame.width
-            self.imageButton.frame = CGRectMake(0, 0, Constants.screenWidth, Constants.screenWidth * scale)
+            self.imageButton.frame = CGRect(x: 0, y: 0, width: Constants.screenWidth, height: Constants.screenWidth * scale)
             self.likeButton.alpha = 0
             self.shareButton.alpha = 0
             self.userButton.alpha = 0
             self.headerView.alpha = 0
             }, completion: {finished in
-                self.performSegueWithIdentifier("homeToDetail", sender: self)
+                self.performSegue(withIdentifier: "homeToDetail", sender: self)
         })
 
     }
     
-    override func preferredStatusBarStyle() -> UIStatusBarStyle {
-        return UIStatusBarStyle.LightContent
+    override var preferredStatusBarStyle : UIStatusBarStyle {
+        return UIStatusBarStyle.lightContent
     }
     
     func setDialogViewStartView(){
-        let scale = CGAffineTransformMakeScale(0.5, 0.5)
-        let translate = CGAffineTransformMakeTranslation(0, -200)
+        let scale = CGAffineTransform(scaleX: 0.5, y: 0.5)
+        let translate = CGAffineTransform(translationX: 0, y: -200)
         dialogView.center = view.center
-        dialogView.transform = CGAffineTransformConcat(scale, translate)
+        dialogView.transform = scale.concatenating(translate)
         
-        UIView.animateWithDuration(0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: [], animations: {
-            let scale = CGAffineTransformMakeScale(1, 1)
-            let translate = CGAffineTransformMakeTranslation(0, 0)
-            self.dialogView.transform = CGAffineTransformConcat(scale, translate)
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: [], animations: {
+            let scale = CGAffineTransform(scaleX: 1, y: 1)
+            let translate = CGAffineTransform(translationX: 0, y: 0)
+            self.dialogView.transform = scale.concatenating(translate)
         }, completion: nil)
 
     }
@@ -160,8 +160,8 @@ class HomeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        insertBlurView(backgroundMaskView, style: UIBlurEffectStyle.Dark)
-        insertBlurView(headerView, style: UIBlurEffectStyle.Dark)
+        insertBlurView(view: backgroundMaskView, style: UIBlurEffectStyle.dark)
+        insertBlurView(view: headerView, style: UIBlurEffectStyle.dark)
         setDialogViewStartView()
         
         animator = UIDynamicAnimator(referenceView: view)
@@ -175,25 +175,25 @@ class HomeVC: UIViewController {
     var snapBehavior : UISnapBehavior!
     
     @IBOutlet var panRecognizer: UIPanGestureRecognizer!
-    @IBAction func handleGesture(sender: UIPanGestureRecognizer) {
-        let location = sender.locationInView(view)
-        let boxLocation = sender.locationInView(dialogView)
+    @IBAction func handleGesture(_ sender: UIPanGestureRecognizer) {
+        let location = sender.location(in: view)
+        let boxLocation = sender.location(in: dialogView)
         
         switch sender.state {
-        case .Began:
+        case .began:
             self.animator.removeAllBehaviors()
             
-            let centerOffset = UIOffsetMake(boxLocation.x - CGRectGetMidX(dialogView.bounds), boxLocation.y - CGRectGetMidY(dialogView.bounds))
+            let centerOffset = UIOffsetMake(boxLocation.x - dialogView.bounds.midX, boxLocation.y - dialogView.bounds.midY)
             attachmentBehavior = UIAttachmentBehavior(item: dialogView, offsetFromCenter: centerOffset, attachedToAnchor: location)
             attachmentBehavior.frequency = 0
             
             animator.addBehavior(attachmentBehavior)
-        case .Changed:
+        case .changed:
             attachmentBehavior.anchorPoint = location
-        case .Ended:
+        case .ended:
             animator.removeBehavior(attachmentBehavior)
             
-            snapBehavior = UISnapBehavior(item: dialogView, snapToPoint: view.center)
+            snapBehavior = UISnapBehavior(item: dialogView, snapTo: view.center)
             animator.addBehavior(snapBehavior)
         default:
             break
