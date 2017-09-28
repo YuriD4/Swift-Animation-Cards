@@ -1,7 +1,7 @@
 # Swift-Animation-Cards
 
 ##Description##
-Simple mobile application using Swift3:
+Simple mobile application using Swift:
 - Basic Animations
 - Transform Animations
 - Spring Animations
